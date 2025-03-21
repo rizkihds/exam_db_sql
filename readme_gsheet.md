@@ -34,9 +34,9 @@
 
 #### **1.2.4 Aggregating Data**
 
-- **SUM, COUNT, AVG, MIN, MAX**
+- **SUM, COUNT, AVG**
   ```excel
-  =QUERY(Employees!A1:F101, "SELECT A, SUM(C), COUNT(A) GROUP BY A", 1)
+  =QUERY(Employees!A1:F101, "SELECT AVG(C), COUNT(A), E GROUP BY E", 1)
   ```
 
 ---
