@@ -32,7 +32,7 @@ This guide will help you use **SQL queries in Google Sheets** to **analyze and o
 ✅ **Google Apps Script** for super-powerful data handling! 💻
 
 ### 🔹 4. Hands-on Practice! 🎯
-- 📝 **Dataset Included**: [Google Sheets Link]([https://docs.google.com/spreadsheets/d/your_actual_dataset_link](https://docs.google.com/spreadsheets/d/1FRvmMF5WQWl7wJ4tW9jnKZlCgMu40wYVl6xNymmc0Q4/edit?usp=sharing))
+- 📝 **Dataset Included**: [Google Sheets Link](https://docs.google.com/spreadsheets/d/1FRvmMF5WQWl7wJ4tW9jnKZlCgMu40wYVl6xNymmc0Q4/edit?usp=sharing)
 - 🏅 **Practice Queries** to try out yourself! [Visit](https://github.com/rizkihds/exam_db_sql/blob/main/readme_gsheet.md)
 
 ## 🚀 How to Start?
