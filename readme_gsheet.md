@@ -29,14 +29,14 @@
 
 - **WHERE Clause**: Applying conditions
   ```excel
-  =QUERY(Employees!A1:F101, "SELECT A, B, C WHERE B > 50", 1)
+  =QUERY(Employees!A1:F101, "SELECT A, B, C WHERE C > 50", 1)
   ```
 
 #### **1.2.4 Aggregating Data**
 
 - **SUM, COUNT, AVG, MIN, MAX**
   ```excel
-  =QUERY(Employees!A1:F101, "SELECT A, SUM(B), COUNT(C) GROUP BY A", 1)
+  =QUERY(Employees!A1:F101, "SELECT A, SUM(C), COUNT(A) GROUP BY A", 1)
   ```
 
 ---
