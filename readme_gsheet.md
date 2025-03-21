@@ -56,7 +56,7 @@
 - **Using ARRAYFORMULA & VLOOKUP**
   ```excel
   =ARRAYFORMULA(
-    {"ID", "Name", "Age", "Email", "Dep";
+    {"ID", "Name", "Age", "Email", "Dept";
       Employees!A2:A1001, 
       Employees!B2:B1001, 
       Employees!C2:C1001, 
@@ -71,7 +71,7 @@
 - **WHERE + AND/OR**
   ```excel
   =QUERY(ARRAYFORMULA(
-    {"ID", "Name", "Age", "Email", "Dep";
+    {"ID", "Name", "Age", "Email", "Dept";
       Employees!A2:A1001, 
       Employees!B2:B1001, 
       Employees!C2:C1001, 
