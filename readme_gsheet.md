@@ -55,7 +55,15 @@
 
 - **Using ARRAYFORMULA & VLOOKUP**
   ```excel
-  =ARRAYFORMULA({Employees!A2:D1001, VLOOKUP(Employees!E2:E1001, Departments!A:B, 2, FALSE)})
+  =ARRAYFORMULA(
+    {"ID", "Name", "Age", "Email", "Dep";
+      Employees!A2:A1001, 
+      Employees!B2:B1001, 
+      Employees!C2:C1001, 
+      Employees!D2:D1001, 
+      IFERROR(VLOOKUP(Employees!E2:E1001, Departments!A:B, 2, FALSE), "No Dept")
+    }
+  )
   ```
 
 #### **2.2.2 Filtering with Multiple Conditions**
