@@ -55,14 +55,22 @@
 
 - **Using ARRAYFORMULA & VLOOKUP**
   ```excel
-  =ARRAYFORMULA({Employees!A2:D1001, VLOOKUP(Employees!D2:D1001, Departments!A:B, 2, FALSE)})
+  =ARRAYFORMULA({Employees!A2:D1001, VLOOKUP(Employees!E2:E1001, Departments!A:B, 2, FALSE)})
   ```
 
 #### **2.2.2 Filtering with Multiple Conditions**
 
 - **WHERE + AND/OR**
   ```excel
-  =QUERY(Employees!A1:F1001, "SELECT A, B, C WHERE B > 30 AND C = 'Sales'", 1)
+  =QUERY(ARRAYFORMULA(
+    {"ID", "Name", "Age", "Email", "Dep";
+      Employees!A2:A1001, 
+      Employees!B2:B1001, 
+      Employees!C2:C1001, 
+      Employees!D2:D1001, 
+      IFERROR(VLOOKUP(Employees!E2:E1001, Departments!A:B, 2, FALSE), "No Dept")
+    }
+  ), "SELECT * WHERE Col3 > 30 AND Col5 = 'SALES'", 1)
   ```
 
 #### **2.2.3 Grouping and Aggregation**
