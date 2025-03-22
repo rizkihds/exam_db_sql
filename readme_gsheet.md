@@ -81,59 +81,55 @@
   ), "SELECT * WHERE Col3 > 30 AND Col5 = 'SALES'", 1)
   ```
 
-#### **2.2.3 Grouping and Aggregation**
+#### **2.2.3 Sort, Grouping and Aggregation Per Department**
 
 - **GROUP BY + COUNT & AVG**
   ```excel
-  =QUERY(Employees!A1:F1001, "SELECT C, AVG(B) GROUP BY C", 1)
+  =QUERY(ARRAYFORMULA(
+    {"ID", "Name", "Age", "Email", "Dept";
+      Employees!A2:A1001, 
+      Employees!B2:B1001, 
+      Employees!C2:C1001, 
+      Employees!D2:D1001, 
+      IFERROR(VLOOKUP(Employees!E2:E1001, Departments!A:B, 2, FALSE), "No Dept")
+    }
+  ), "SELECT Col5, AVG(Col3), COUNT(Col1) GROUP BY Col5 ORDER BY COUNT(Col1) DESC", 1)
   ```
 
-#### **2.2.4 Counting Employees Per Department**
-
-```excel
-=QUERY(Employees!A1:F1001, "SELECT Department, COUNT(A) GROUP BY Department", 1)
-```
-
-#### **2.2.5 Sorting Data**
-
-```excel
-=QUERY(Employees!A1:F1001, "SELECT A, B, C ORDER BY B DESC LIMIT 5", 1)
-```
-
-#### **2.2.6 Combining Multiple Queries (UNION Equivalent)**
+#### **2.2.4 Combining Multiple Queries (UNION Equivalent)**
 
 ```excel
 =ARRAYFORMULA({QUERY(Employees!A:E, "SELECT A, B, C"), QUERY(Departments!A:E, "SELECT A, B, C")})
 ```
 
-#### **2.2.7 Extracting Employees with the Highest Age (LIMIT Equivalent)**
+#### **2.2.5 Extracting Employees with the Highest Age (LIMIT Equivalent)**
 
 ```excel
 =QUERY(Employees!A1:F1001, "SELECT A, B, C ORDER BY B DESC LIMIT 1", 1)
 ```
 
-#### **2.2.8 Finding Employees with Name Containing Specific Letters (LIKE Equivalent Using MATCHES)**
+#### **2.2.6 Finding Employees with Name Containing Specific Letters (LIKE Equivalent Using MATCHES)**
 
 ```excel
 =QUERY(Employees!A1:F1001, "SELECT A, B, C WHERE A MATCHES '.*John.*'", 1)
 ```
 
-#### **2.2.9 Finding Employees by Birth Year**
+#### **2.2.7 Finding Employees by Birth Year**
 ```excel
 =QUERY(Employees!A1:F1001, "SELECT A, B, C WHERE YEAR(E) = 1990", 1)
 ```
 
-#### **2.2.10 Finding Employees from a Specific City**
+#### **2.2.8 Finding Employees from a Specific City**
 ```excel
 =QUERY(Employees!A1:F1001, "SELECT A, B, C WHERE F = 'New York'", 1)
 ```
 
-#### **2.2.11 Finding Employees with a Specific Nationality**
+#### **2.2.9 Finding Employees with a Specific Nationality**
 ```excel
 =QUERY(Employees!A1:F1001, "SELECT A, B, C WHERE G = 'Canadian'", 1)
 ```
 
-#### **2.2.12 Finding Employees with Phone Numbers from a Specific Area Code**
+#### **2.2.10 Finding Employees with Phone Numbers from a Specific Area Code**
 ```excel
 =QUERY(Employees!A1:F1001, "SELECT A, B, C WHERE H LIKE '415-%'", 1)
 ```
