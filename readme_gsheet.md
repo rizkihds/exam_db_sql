@@ -96,10 +96,10 @@
   ), "SELECT Col5, AVG(Col3), COUNT(Col1) GROUP BY Col5 ORDER BY COUNT(Col1) DESC", 1)
   ```
 
-#### **2.2.4 Combining Multiple Queries (UNION Equivalent)**
+#### **2.2.4 Combining Multiple Sheet (UNION Equivalent)**
 
-```excel
-=ARRAYFORMULA({QUERY(Employees!A:E, "SELECT A, B, C"), QUERY(Departments!A:E, "SELECT A, B, C")})
+```exce 
+=ARRAYFORMULA({QUERY(Employees!A:E, "SELECT A, B, C"); QUERY(Employees!A:E, "SELECT A, B, C")})
 ```
 
 #### **2.2.5 Extracting Employees with the Highest Age (LIMIT Equivalent)**
